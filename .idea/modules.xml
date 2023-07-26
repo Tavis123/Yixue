@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Yixue.iml" filepath="$PROJECT_DIR$/.idea/Yixue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-base/yixue-base.iml" filepath="$PROJECT_DIR$/yixue-base/yixue-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-parent/yixue-parent.iml" filepath="$PROJECT_DIR$/yixue-parent/yixue-parent.iml" />
     </modules>
   </component>

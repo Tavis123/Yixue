@@ -7,8 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
+      <profile name="Annotation profile for yixue-base" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="D:/apache-maven-3.6.3/maven-repository/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
+        </processorPath>
+        <module name="yixue-base" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="yixue-base" target="1.8" />
       <module name="yixue-parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
