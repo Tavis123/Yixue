@@ -3,6 +3,16 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/yixue-base/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/yixue-base/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/yixue-content-controller/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/yixue-content-controller/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/yixue-content-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/yixue-content-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/yixue-content-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-content/yixue-content-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yixue-generator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/yixue-parent/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/yixue-parent/src/main/resources" charset="UTF-8" />
   </component>

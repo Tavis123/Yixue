@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Yixue.iml" filepath="$PROJECT_DIR$/.idea/Yixue.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-base/yixue-base.iml" filepath="$PROJECT_DIR$/yixue-base/yixue-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-controller/yixue-content-controller.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-controller/yixue-content-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-model/yixue-content-model.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-model/yixue-content-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-service/yixue-content-service.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-service/yixue-content-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-generator/yixue-generator.iml" filepath="$PROJECT_DIR$/yixue-generator/yixue-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-parent/yixue-parent.iml" filepath="$PROJECT_DIR$/yixue-parent/yixue-parent.iml" />
     </modules>
   </component>

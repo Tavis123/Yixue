@@ -3,12 +3,15 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/yixue-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-content/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-content/yixue-content-api/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-generator/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-base/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-parent/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">
