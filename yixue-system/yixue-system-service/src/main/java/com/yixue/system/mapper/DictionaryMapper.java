@@ -8,7 +8,7 @@ import com.yixue.system.model.po.Dictionary;
  * 数据字典 Mapper 接口
  * </p>
  *
- * @author itcast
+ * @author Tavis
  */
 public interface DictionaryMapper extends BaseMapper<Dictionary> {
 
