@@ -1,5 +1,6 @@
 package com.yixue;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,10 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2023-07-31
  * @desc 内容管理服务启动类
  */
+
+@EnableSwagger2Doc
 @SpringBootApplication
-public class YixueContentControllerApplication {
+public class ContentControllerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(YixueContentControllerApplication.class, args);
+        SpringApplication.run(ContentControllerApplication.class, args);
     }
 
 }

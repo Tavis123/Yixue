@@ -14,3 +14,9 @@ spring:
 # 日志文件配置路径
 logging:
   config: classpath:log4j2-dev.xml
+swagger:
+  title: "易学网"
+  description: "内容管理系统：对课程相关信息进行管理"
+  base-package: com.yixue.content
+  enabled: true
+  version: 1.0.0

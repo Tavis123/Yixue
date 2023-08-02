@@ -2,6 +2,7 @@ package com.yixue.content.mapper;
 
 import com.yixue.content.model.entity.CourseCategory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -10,6 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  *
  * @author Tavis
  */
+@Mapper
 public interface CourseCategoryMapper extends BaseMapper<CourseCategory> {
 
 }
