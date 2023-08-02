@@ -7,11 +7,15 @@
         <option value="$PROJECT_DIR$/yixue-content/yixue-content-api/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-generator/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-base/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/xuecheng-plus-system/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-system/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-system/yixue-system-service/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-system/yixue-system-controller/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">
