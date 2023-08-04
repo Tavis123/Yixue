@@ -1,7 +1,7 @@
 package com.yixue.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.yixue.system.model.po.Dictionary;
+import com.yixue.system.model.entity.Dictionary;
 
 /**
  * <p>

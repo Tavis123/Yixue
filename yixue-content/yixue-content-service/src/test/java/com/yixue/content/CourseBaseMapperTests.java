@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * @author Tavis
  * @date 2023-08-01
- * @desc 单元测试类
+ * @desc 课程查询单元测试类
  */
 @SpringBootTest
 public class CourseBaseMapperTests {

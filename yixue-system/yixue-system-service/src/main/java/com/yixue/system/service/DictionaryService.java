@@ -1,7 +1,7 @@
 package com.yixue.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.yixue.system.model.po.Dictionary;
+import com.yixue.system.model.entity.Dictionary;
 
 import java.util.List;
 

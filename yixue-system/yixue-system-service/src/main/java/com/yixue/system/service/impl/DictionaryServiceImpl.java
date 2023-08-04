@@ -3,7 +3,7 @@ package com.yixue.system.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yixue.system.mapper.DictionaryMapper;
-import com.yixue.system.model.po.Dictionary;
+import com.yixue.system.model.entity.Dictionary;
 import com.yixue.system.service.DictionaryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

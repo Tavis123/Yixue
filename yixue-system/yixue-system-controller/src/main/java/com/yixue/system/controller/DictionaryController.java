@@ -1,6 +1,6 @@
 package com.yixue.system.controller;
 
-import com.yixue.system.model.po.Dictionary;
+import com.yixue.system.model.entity.Dictionary;
 import com.yixue.system.service.DictionaryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

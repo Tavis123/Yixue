@@ -20,3 +20,8 @@ swagger:
   base-package: com.yixue.content
   enabled: true
   version: 1.0.0
+mybatis-plus:
+  #配置mapper.xml文件所在的路径
+  mapper-locations: classpath:mapper/*.xml
+    #配置映射类所在的包
+  type-aliases-package: com.yixue.content.entity
