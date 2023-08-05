@@ -10,7 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/yixue-generator/yixue-generator.iml" filepath="$PROJECT_DIR$/yixue-generator/yixue-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-parent/yixue-parent.iml" filepath="$PROJECT_DIR$/yixue-parent/yixue-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system.iml" />
-      <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system-api/yixue-system-controller.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system-api/yixue-system-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system-controller/yixue-system-controller.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system-controller/yixue-system-controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system-model/yixue-system-model.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system-model/yixue-system-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system-service/yixue-system-service.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system-service/yixue-system-service.iml" />
     </modules>
