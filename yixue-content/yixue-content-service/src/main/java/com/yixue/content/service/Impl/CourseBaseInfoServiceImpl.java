@@ -10,6 +10,7 @@ import com.yixue.content.mapper.CourseCategoryMapper;
 import com.yixue.content.mapper.CourseMarketMapper;
 import com.yixue.content.model.dto.AddCourseDto;
 import com.yixue.content.model.dto.CourseBaseInfoDto;
+import com.yixue.content.model.dto.EditCourseDto;
 import com.yixue.content.model.dto.QueryCourseParamsDto;
 import com.yixue.content.model.entity.CourseBase;
 import com.yixue.content.model.entity.CourseCategory;
@@ -100,35 +101,35 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 //            YixueException.cast("收费规则为空");
 //        }
         //向课程基本信息表course_base写入数据
-        CourseBase NewCourseBase = new CourseBase();
-        BeanUtils.copyProperties(dto, NewCourseBase);
-        NewCourseBase.setCompanyId(companyId);
-        NewCourseBase.setCreateDate(LocalDateTime.now());
+        CourseBase newCourseBase = new CourseBase();
+        BeanUtils.copyProperties(dto, newCourseBase);
+        newCourseBase.setCompanyId(companyId);
+        newCourseBase.setCreateDate(LocalDateTime.now());
         //审核状态默认为未提交
-        NewCourseBase.setAuditStatus("202002");
+        newCourseBase.setAuditStatus("202002");
         //发布状态默认为未发布
-        NewCourseBase.setStatus("203001");
+        newCourseBase.setStatus("203001");
         //插入数据库
-        int insert = courseBaseMapper.insert(NewCourseBase);
+        int insert = courseBaseMapper.insert(newCourseBase);
         if (insert <= 0) {
             YixueException.cast("添加课程失败");
         }
         //向课程营销表course_market写入数据
-        CourseMarket NewCourseMarket = new CourseMarket();
+        CourseMarket newCourseMarket = new CourseMarket();
         //将页面输入的信息拷入对象
-        BeanUtils.copyProperties(dto, NewCourseMarket);
+        BeanUtils.copyProperties(dto, newCourseMarket);
         //设置课程id
-        Long courseId = NewCourseBase.getId();
-        NewCourseMarket.setId(courseId);
+        Long courseId = newCourseBase.getId();
+        newCourseMarket.setId(courseId);
         //保存营销信息
-        saveCourseMarket(NewCourseMarket);
+        saveCourseMarket(newCourseMarket);
         //从数据库查询课程的详细信息
-        CourseBaseInfoDto courseBaseInfo = getCourseBaseInfo(courseId);
-        return courseBaseInfo;
+        return getCourseBaseInfo(courseId);
     }
 
-    //查询课程信息
-    public CourseBaseInfoDto getCourseBaseInfo(long courseId) {
+    @Override
+    //根据课程id查询课程信息
+    public CourseBaseInfoDto getCourseBaseInfo(Long courseId) {
         //从course_base表中查询
         CourseBase courseBase = courseBaseMapper.selectById(courseId);
         if (courseBase == null) {
@@ -146,43 +147,74 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         String mt = courseBase.getMt();
         CourseCategory c1 = courseCategoryMapper.selectById(mt);
         if (c1 != null) {
-            courseBaseInfoDto.setMt(c1.getName());
+            courseBaseInfoDto.setMtName(c1.getName());
         }
         String st = courseBase.getSt();
         CourseCategory c2 = courseCategoryMapper.selectById(st);
         if (c2 != null) {
-            courseBaseInfoDto.setSt(c2.getName());
+            courseBaseInfoDto.setStName(c2.getName());
         }
         return courseBaseInfoDto;
     }
 
-
     //保存营销信息
-    private void saveCourseMarket(CourseMarket NewCourseMarket) {
+    private void saveCourseMarket(CourseMarket newCourseMarket) {
         //参数的合法性校验
-        String charge = NewCourseMarket.getCharge();
+        String charge = newCourseMarket.getCharge();
         if (StringUtils.isEmpty(charge)) {
             YixueException.cast("收费规则为空");
         }
         //如果课程收费，价格没有填写也需要抛出异常
         if (charge.equals("201001")) {
-            if (NewCourseMarket.getPrice() == null || NewCourseMarket.getPrice().floatValue() <= 0) {
+            if (newCourseMarket.getPrice() == null || newCourseMarket.getPrice() <= 0) {
                 YixueException.cast("课程价格不能为空并且必须大于0");
             }
         }
         //从数据库查询营销信息，存在则更新，不存在则添加
-        Long id = NewCourseMarket.getId();
+        Long id = newCourseMarket.getId();
         CourseMarket courseMarket = courseMarketMapper.selectById(id);
         if (courseMarket == null) {
             //插入数据库
-            courseMarketMapper.insert(NewCourseMarket);
+            courseMarketMapper.insert(newCourseMarket);
         } else {
             //将NewCourseMarket中的数据拷贝到courseMarket中
-            BeanUtils.copyProperties(NewCourseMarket, courseMarket);
-            courseMarket.setId(NewCourseMarket.getId());
+            BeanUtils.copyProperties(newCourseMarket, courseMarket);
+            courseMarket.setId(newCourseMarket.getId());
             //更新数据库
             courseMarketMapper.updateById(courseMarket);
         }
+    }
+
+    @Transactional
+    @Override
+    public CourseBaseInfoDto updateCourseBase(Long companyId, EditCourseDto editCourseDto) {
+        //拿到课程id
+        Long courseId = editCourseDto.getId();
+        //查询课程信息
+        CourseBase courseBase = courseBaseMapper.selectById(courseId);
+        if (courseBase == null) {
+            YixueException.cast("课程不存在");
+        }
+        //根据具体的业务逻辑校验：本机构只能修改本机构的课程
+        if (!companyId.equals(courseBase.getCompanyId())) {
+            YixueException.cast("只能修改本机构的课程");
+        }
+        //封装数据
+        BeanUtils.copyProperties(editCourseDto, courseBase);
+        //修改时间
+        courseBase.setChangeDate(LocalDateTime.now());
+        //更新数据库
+        int i = courseBaseMapper.updateById(courseBase);
+        if (i <= 0) {
+            YixueException.cast("修改课程失败");
+        }
+        //封装营销数据
+        CourseMarket courseMarket = new CourseMarket();
+        BeanUtils.copyProperties(editCourseDto, courseMarket);
+        //保存营销信息
+        saveCourseMarket(courseMarket);
+        //查询课程信息
+        return getCourseBaseInfo(courseId);
     }
 
 

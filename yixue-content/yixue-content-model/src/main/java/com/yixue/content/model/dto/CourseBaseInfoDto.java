@@ -16,7 +16,6 @@ public class CourseBaseInfoDto extends CourseBase {
     //价格
     private Float price;
 
-
     //原价
     private Float originalPrice;
 

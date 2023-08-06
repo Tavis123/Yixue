@@ -1,10 +1,16 @@
 package com.yixue.base.exception;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Tavis
@@ -15,7 +21,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    //对项目的自定义异常类型进行处理
+    //解析自定义异常
     @ExceptionHandler(YixueException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public RestErrorResponse customException(YixueException e) {
@@ -27,6 +33,7 @@ public class GlobalExceptionHandler {
         return restErrorResponse;
     }
 
+    //解析Exception异常
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public RestErrorResponse exception(Exception e) {
@@ -37,5 +44,19 @@ public class GlobalExceptionHandler {
         return restErrorResponse;
     }
 
+    //解析MethodArgumentNotValidException异常
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public RestErrorResponse MethodArgumentNotValidException(MethodArgumentNotValidException e) {
+        BindingResult bindingResult = e.getBindingResult();
+        //存储错误信息
+        List<String> errorList = new ArrayList<>();
+        bindingResult.getFieldErrors().stream().forEach(item -> errorList.add(item.getDefaultMessage()));
+        //拼接错误信息
+        String errorMsg = StringUtils.join(errorList, ",");
+        log.error("系统异常{}", e.getMessage(), errorMsg);
+        return new RestErrorResponse(errorMsg);
+
+    }
 
 }
