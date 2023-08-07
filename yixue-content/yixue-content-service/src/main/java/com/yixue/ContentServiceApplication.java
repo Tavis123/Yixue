@@ -1,13 +1,13 @@
-package com.yixue.content.model;
+package com.yixue;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YixueContentModelApplication {
+public class ContentServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(YixueContentModelApplication.class, args);
+        SpringApplication.run(ContentServiceApplication.class, args);
     }
 
 }

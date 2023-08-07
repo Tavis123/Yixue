@@ -3,6 +3,7 @@ package com.yixue.content.model.dto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * @author Tavis
@@ -10,6 +11,7 @@ import lombok.Data;
  * @desc 修改课程dto
  */
 @Data
+@ToString
 @ApiModel(value = "修改课程dto", description = "修改课程基本信息")
 public class EditCourseDto extends AddCourseDto {
 
