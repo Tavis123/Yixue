@@ -13,7 +13,24 @@
         <option value="$PROJECT_DIR$/yixue-system/yixue-system-service/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-system/yixue-system-controller/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/xuecheng-plus-media/pom.xml" />
+        <option value="$PROJECT_DIR$/xuecheng-plus-media/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/yixue-media/pom.xml" />
+        <option value="$PROJECT_DIR$/xuecheng-plus-media/xuecheng-plus-media-model/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-media/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/xuecheng-plus-media/xuecheng-plus-media-api/pom.xml" />
+        <option value="$PROJECT_DIR$/xuecheng-plus-media/xuecheng-plus-media-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/xuecheng-plus-media/xuecheng-plus-media-api/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/xuecheng-plus-media/xuecheng-plus-media-model/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/xuecheng-plus-media/xuecheng-plus-media-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/yixue-media/yixue-media-controller/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/yixue-media/yixue-media-model/pom.xml" />
+        <option value="$PROJECT_DIR$/../学成在线/yixue-media/yixue-media-service/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

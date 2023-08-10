@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>yixue-parent</artifactId>
+        <groupId>com.yixue</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../yixue-parent</relativePath>
+    </parent>
+    <artifactId>yixue-media</artifactId>
+    <name>yixue-media</name>
+    <description>yixue-media</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>yixue-media-controller</module>
+        <module>yixue-media-service</module>
+        <module>yixue-media-model</module>
+    </modules>
+</project>

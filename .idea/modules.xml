@@ -9,6 +9,10 @@
       <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-service/yixue-content-service.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-service/yixue-content-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-gateway/yixue-gateway.iml" filepath="$PROJECT_DIR$/yixue-gateway/yixue-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-generator/yixue-generator.iml" filepath="$PROJECT_DIR$/yixue-generator/yixue-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-media/yixue-media.iml" filepath="$PROJECT_DIR$/yixue-media/yixue-media.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-media/yixue-media-controller/yixue-media-controller.iml" filepath="$PROJECT_DIR$/yixue-media/yixue-media-controller/yixue-media-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-media/yixue-media-model/yixue-media-model.iml" filepath="$PROJECT_DIR$/yixue-media/yixue-media-model/yixue-media-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-media/yixue-media-service/yixue-media-service.iml" filepath="$PROJECT_DIR$/yixue-media/yixue-media-service/yixue-media-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-parent/yixue-parent.iml" filepath="$PROJECT_DIR$/yixue-parent/yixue-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system-controller/yixue-system-controller.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system-controller/yixue-system-controller.iml" />
