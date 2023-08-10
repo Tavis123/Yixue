@@ -4,7 +4,6 @@ import com.yixue.content.model.dto.SaveTeachplanDto;
 import com.yixue.content.model.dto.TeachplanDto;
 import com.yixue.content.service.TeachplanService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,7 @@ public class TeachplanController {
     TeachplanService teachplanService;
 
     //查询课程计划
-    @ApiOperation("查询课程计划树形结构")
+    @ApiOperation("查询课程计划")
     @GetMapping("/teachplan/{courseId}/tree-nodes")
     public List<TeachplanDto> getTreeNodes(@PathVariable Long courseId) {
         return teachplanService.findTeachplanTree(courseId);

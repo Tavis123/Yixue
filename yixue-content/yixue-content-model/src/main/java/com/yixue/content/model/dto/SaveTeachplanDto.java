@@ -37,7 +37,6 @@ public class SaveTeachplanDto {
      */
     private String mediaType;
 
-
     /**
      * 课程标识
      */

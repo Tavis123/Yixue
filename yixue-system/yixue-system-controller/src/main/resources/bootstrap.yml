@@ -1,24 +1,58 @@
-server:
-  servlet:
-    context-path: /system
-  port: 63110
+#server:
+#  servlet:
+#    context-path: /system
+#  port: 63110
+
 #微服务配置
 spring:
   application:
-    name: system-api
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.101.65:3306/xcplus_system?serverTimezone=UTC&userUnicode=true&useSSL=false&
-    username: root
-    password: mysql
-# 日志文件配置路径
-logging:
-  config: classpath:log4j2-dev.xml
+    name: system-controller
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  cloud:
+    nacos:
+      server-addr: 192.168.192.1:8848
+      discovery:
+        namespace: dev
+        group: yixue-project
+      config:
+        namespace: dev
+        group: yixue-project
+        file-extension: yaml
+        refresh-enabled: true
+        extension-configs:
+          - data-id: system-service-${spring.profiles.active}.yaml
+            group: yixue-project
+            refresh: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: yixue-common
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.xml
+            group: yixue-common
+            refresh: true
+  profiles:
+    active: dev #环境名
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/yixue_system
+#    username: root
+#    password: 123456
 
-# swagger 文档配置
-swagger:
-  title: "学成在线系统管理"
-  description: "系统管理接口"
-  base-package: com.xuecheng.system
-  enabled: true
-  version: 1.0.0
+## 日志文件配置路径
+#logging:
+#  config: classpath:log4j2-dev.xml
+#
+## swagger 文档配置
+#swagger:
+#  title: "学成在线系统管理"
+#  description: "系统管理接口"
+#  base-package: com.xuecheng.system
+#  enabled: true
+#  version: 1.0.0
+mybatis-plus:
+  #配置mapper.xml文件所在的路径
+  mapper-locations: classpath:mapper/*.xml
+  #配置映射类所在的包
+  type-aliases-package: com.yixue.system.entity

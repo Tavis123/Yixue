@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-controller/yixue-content-controller.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-controller/yixue-content-controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-model/yixue-content-model.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-model/yixue-content-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-service/yixue-content-service.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-service/yixue-content-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yixue-gateway/yixue-gateway.iml" filepath="$PROJECT_DIR$/yixue-gateway/yixue-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-generator/yixue-generator.iml" filepath="$PROJECT_DIR$/yixue-generator/yixue-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-parent/yixue-parent.iml" filepath="$PROJECT_DIR$/yixue-parent/yixue-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-system/yixue-system.iml" filepath="$PROJECT_DIR$/yixue-system/yixue-system.iml" />

@@ -38,7 +38,7 @@ public class CourseBaseInfoController {
         return pageResult;
     }
 
-    @ApiModelProperty("新增课程")
+    @ApiOperation("新增课程")
     @PostMapping("/course/create")
     public CourseBaseInfoDto createCourseBase(@RequestBody @Validated(ValidationGroups.Insert.class) AddCourseDto addCourseDto) {
         //获取用户所属机构的id
@@ -47,14 +47,14 @@ public class CourseBaseInfoController {
         return courseBase;
     }
 
-    @ApiModelProperty("根据课程id查询")
+    @ApiOperation("根据课程id查询")
     @GetMapping("/course/{courseId}")
     public CourseBaseInfoDto getCourseBaseById(@PathVariable Long courseId) {
         CourseBaseInfoDto courseBaseInfoDto = courseBaseInfoService.getCourseBaseInfo(courseId);
         return courseBaseInfoDto;
     }
 
-    @ApiModelProperty("修改课程")
+    @ApiOperation("修改课程")
     @PutMapping("/course/update")
     public CourseBaseInfoDto updateCourseBase(@RequestBody @Validated EditCourseDto editCourseDto) {
         //获取用户所属机构的id

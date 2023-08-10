@@ -8,13 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for yixue-system" enabled="true">
+      <profile name="Annotation profile for yixue-gateway" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="D:/apache-maven-3.6.3/maven-repository/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
         </processorPath>
+        <module name="yixue-gateway" />
         <module name="yixue-system-model" />
         <module name="yixue-content-model" />
         <module name="yixue-content-controller" />
@@ -31,6 +32,7 @@
       <module name="yixue-content-controller" target="1.8" />
       <module name="yixue-content-model" target="1.8" />
       <module name="yixue-content-service" target="1.8" />
+      <module name="yixue-gateway" target="1.8" />
       <module name="yixue-generator" target="1.8" />
       <module name="yixue-parent" target="1.8" />
       <module name="yixue-system" target="1.8" />

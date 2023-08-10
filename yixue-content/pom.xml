@@ -18,5 +18,6 @@
         <module>yixue-content-model</module>
         <module>yixue-content-service</module>
     </modules>
+
 </project>
 

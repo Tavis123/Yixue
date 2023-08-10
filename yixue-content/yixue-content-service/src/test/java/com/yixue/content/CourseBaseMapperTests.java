@@ -1,3 +1,5 @@
+package com.yixue.content;
+
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yixue.base.model.PageParams;

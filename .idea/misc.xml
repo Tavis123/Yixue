@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/yixue-parent/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-system/yixue-system-service/pom.xml" />
         <option value="$PROJECT_DIR$/yixue-system/yixue-system-controller/pom.xml" />
+        <option value="$PROJECT_DIR$/yixue-gateway/pom.xml" />
       </list>
     </option>
   </component>
