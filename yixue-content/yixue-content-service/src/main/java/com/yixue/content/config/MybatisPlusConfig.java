@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @desc MybatisPlus设置
  */
 @Configuration
-@MapperScan("com.yixue.content.mapper")
+//@MapperScan("com.yixue.content.mapper")
 public class MybatisPlusConfig {
 
     //定义分页拦截器
