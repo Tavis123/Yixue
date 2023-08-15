@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @EnableSwagger2Doc
 @SpringBootApplication
-public class ContentControllerApplication {
+public class ContentApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ContentControllerApplication.class, args);
+        SpringApplication.run(ContentApplication.class, args);
     }
 
 }

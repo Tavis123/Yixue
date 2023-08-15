@@ -7,7 +7,7 @@ spring:
       matching-strategy: ant_path_matcher
   cloud:
     nacos:
-      server-addr: 192.168.192.1:8848
+      server-addr: 127.0.0.1:8848
       discovery:
         namespace: ${spring.profiles.active}
         group: yixue-project
