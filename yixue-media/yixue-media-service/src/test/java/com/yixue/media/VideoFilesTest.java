@@ -12,7 +12,7 @@ import java.util.*;
  * @date 2023-08-15
  * @desc 测试大文件上传方法
  */
-public class BigDataTest {
+public class VideoFilesTest {
 
     //测试分块
     @Test
@@ -21,14 +21,14 @@ public class BigDataTest {
         File sourceFile = new File("C:\\Users\\86183\\Desktop\\test\\1.mp4");
         //分块文件存储路径
         String chunkPath = "C:\\Users\\86183\\Desktop\\test\\chunk\\";
-        //分块文件大小
-        int chunkSize = 1024 * 1024 * 1;
+        //分块文件大小为5M
+        int chunkSize = 1024 * 1024 * 5;
         //分块文件个数(向上取整)
         int chunkNum = (int) Math.ceil(sourceFile.length() * 1.0 / chunkSize);
         //使用流从源文件读取数据，向分块文件写入数据
         RandomAccessFile raf_read = new RandomAccessFile(sourceFile, "r");
         //缓冲区
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[5120];
         for (int i = 0; i < chunkNum; i++) {
             //创建分块文件
             File chunkFile = new File(chunkPath + i);
@@ -37,7 +37,7 @@ public class BigDataTest {
             int len = -1;
             while ((len = raf_read.read(buffer)) != -1) {
                 raf_write.write(buffer, 0, len);
-                //如果块文件大小达到1M，开始写下一块
+                //如果块文件大小达到5M，开始写下一块
                 if (chunkFile.length() >= chunkSize) {
                     break;
                 }
@@ -71,7 +71,7 @@ public class BigDataTest {
         //向合并文件写入的流
         RandomAccessFile raf_write = new RandomAccessFile(mergeFile, "rw");
         //缓冲区
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[5120];
         //遍历分块文件，将分块文件写入合并文件
         for (File chunkFile : fileList) {
             //读取分块文件

@@ -22,6 +22,7 @@ import java.io.File;
 
 /**
  * @author Tavis
+ * @date 2023-08-13
  * @description 媒资文件管理接口
  */
 @Api(value = "媒资文件管理接口", tags = "媒资文件管理接口")
@@ -38,7 +39,7 @@ public class MediaFilesController {
         return mediaFileService.queryMediaFiels(companyId, pageParams, queryMediaParamsDto);
     }
 
-    @ApiOperation("上传文件接口")
+    @ApiOperation("上传图片/文档接口")
     @PostMapping(value = "/upload/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public UploadFileResultDto uploadFile(@RequestPart("filedata") MultipartFile filedata) throws Exception {
         //上传文件的信息
@@ -47,7 +48,7 @@ public class MediaFilesController {
         uploadFileParamsDto.setFilename(filedata.getOriginalFilename());
         //文件大小
         uploadFileParamsDto.setFileSize(filedata.getSize());
-        //文件类型
+        //文件类型（001001是图片）
         uploadFileParamsDto.setFileType("001001");
         //创建一个临时文件
         File tempFile = File.createTempFile("minio", ".temp");
