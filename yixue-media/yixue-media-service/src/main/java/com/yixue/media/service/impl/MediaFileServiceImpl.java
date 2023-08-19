@@ -8,11 +8,13 @@ import com.yixue.base.exception.YixueException;
 import com.yixue.base.model.PageParams;
 import com.yixue.base.model.PageResult;
 import com.yixue.media.mapper.MediaFilesMapper;
+import com.yixue.media.mapper.MediaProcessMapper;
 import com.yixue.media.model.dto.QueryMediaParamsDto;
 import com.yixue.media.model.dto.RestResponse;
 import com.yixue.media.model.dto.UploadFileParamsDto;
 import com.yixue.media.model.dto.UploadFileResultDto;
 import com.yixue.media.model.entity.MediaFiles;
+import com.yixue.media.model.entity.MediaProcess;
 import com.yixue.media.service.MediaFileService;
 import io.minio.*;
 import io.minio.messages.DeleteError;
@@ -50,6 +52,9 @@ public class MediaFileServiceImpl implements MediaFileService {
 
     @Autowired
     MediaFilesMapper mediaFilesMapper;
+
+    @Autowired
+    MediaProcessMapper mediaProcessMapper;
 
     @Lazy//延迟加载（避免循环依赖问题）
     @Autowired//代理对象
@@ -467,9 +472,31 @@ public class MediaFileServiceImpl implements MediaFileService {
                 log.debug("文件信息保存到数据库失败,bucket:{},objectName:{}", bucket, objectName);
                 return null;
             }
+            //记录待处理任务
+            addWaitingTask(mediaFiles);
             return mediaFiles;
         }
         return mediaFiles;
+    }
+
+    //添加待处理任务
+    private void addWaitingTask(MediaFiles mediaFiles) {
+        //文件名称
+        String fileName = mediaFiles.getFilename();
+        //文件扩展名
+        String extension = fileName.substring(fileName.lastIndexOf("."));
+        //获取文件的mimetype
+        String mimeType = getMimeType(extension);
+        //如果是avi视频才写入待处理任务表
+        if (mimeType.equals("video/x-msvideo")) {
+            MediaProcess mediaProcess = new MediaProcess();
+            BeanUtils.copyProperties(mediaFiles, mediaProcess);
+            mediaProcess.setStatus("1");//未处理状态
+            mediaProcess.setCreateDate(LocalDateTime.now());
+            mediaProcess.setFailCount(0);//失败次数默认值为0
+            mediaProcess.setUrl(null);
+            mediaProcessMapper.insert(mediaProcess);
+        }
     }
 
 }

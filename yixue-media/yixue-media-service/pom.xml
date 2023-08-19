@@ -57,6 +57,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.yixue</groupId>
             <artifactId>yixue-media-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
