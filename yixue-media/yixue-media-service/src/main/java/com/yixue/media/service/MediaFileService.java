@@ -8,6 +8,7 @@ import com.yixue.media.model.dto.UploadFileParamsDto;
 import com.yixue.media.model.dto.UploadFileResultDto;
 import com.yixue.media.model.entity.MediaFiles;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -22,7 +23,7 @@ public interface MediaFileService {
      * @param queryMediaParamsDto 查询条件
      * @description 媒资文件查询接口
      */
-    public PageResult<MediaFiles> queryMediaFiels(Long companyId, PageParams pageParams, QueryMediaParamsDto queryMediaParamsDto);
+    PageResult<MediaFiles> queryMediaFiels(Long companyId, PageParams pageParams, QueryMediaParamsDto queryMediaParamsDto);
 
     /**
      * @param companyId           机构id
@@ -31,7 +32,7 @@ public interface MediaFileService {
      * @return UploadFileResultDto 结果信息
      * @description 上传图片、文档文件接口
      */
-    public UploadFileResultDto uploadFile(Long companyId, UploadFileParamsDto uploadFileParamsDto, String localFilePath);
+    UploadFileResultDto uploadFile(Long companyId, UploadFileParamsDto uploadFileParamsDto, String localFilePath);
 
     /**
      * @param uploadFileParamsDto 上传文件的信息
@@ -39,7 +40,7 @@ public interface MediaFileService {
      * @return RestResponse
      * @description 上传视频文件
      */
-    public RestResponse uploadVideo(UploadFileParamsDto uploadFileParamsDto, String localFilePath) throws IOException;
+    RestResponse uploadVideo(UploadFileParamsDto uploadFileParamsDto, String localFilePath) throws IOException;
 
 //    /**
 //     * @param fileMd5       文件md5
@@ -59,14 +60,14 @@ public interface MediaFileService {
      * @return MediaFiles 媒资文件信息
      * @description 将上传的文件信息保存到数据库
      */
-    public MediaFiles addMediaFilesToDb(Long companyId, String fileMd5, UploadFileParamsDto uploadFileParamsDto, String bucket, String objectName);
+    MediaFiles addMediaFilesToDb(Long companyId, String fileMd5, UploadFileParamsDto uploadFileParamsDto, String bucket, String objectName);
 
     /**
      * @param fileMd5 文件md5
      * @return Boolean true存在，false不存在
      * @description 检查文件是否存在
      */
-    public RestResponse<Boolean> checkFile(String fileMd5);
+    RestResponse<Boolean> checkFile(String fileMd5);
 
     /**
      * @param fileMd5    文件md5
@@ -74,7 +75,7 @@ public interface MediaFileService {
      * @return Boolean true存在，false不存在
      * @description 检查分块是否存在
      */
-    public RestResponse<Boolean> checkChunk(String fileMd5, int chunkIndex);
+    RestResponse<Boolean> checkChunk(String fileMd5, int chunkIndex);
 
     /**
      * @param companyId           机构id
@@ -84,7 +85,22 @@ public interface MediaFileService {
      * @return RestResponse
      * @description 合并分块
      */
-    public RestResponse mergechunks(Long companyId, String fileMd5, int chunkTotal, UploadFileParamsDto uploadFileParamsDto);
+    RestResponse mergechunks(Long companyId, String fileMd5, int chunkTotal, UploadFileParamsDto uploadFileParamsDto);
+
+    /**
+     * @param bucket     桶
+     * @param objectName 文件在minio中存储的路径
+     * @description 从minio下载文件
+     */
+    File downloadFileFromMinIO(String bucket, String objectName);
 
 
+    /**
+     * @param localFilePath 本地文件路径
+     * @param mimeType      文件类型
+     * @param bucket        桶
+     * @param objectName    文件在minio中存储的路径
+     * @description 将文件上传到minio
+     */
+    boolean addMediafilesToMinio(String localFilePath, String mimeType, String bucket, String objectName);
 }

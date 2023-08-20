@@ -207,6 +207,7 @@ public class MediaFileServiceImpl implements MediaFileService {
 
 
     //上传图片、文档文件到minio
+    @Override
     public boolean addMediafilesToMinio(String localFilePath, String mimeType, String bucket, String objectName) {
         try {
             UploadObjectArgs uploadObjectArgs = UploadObjectArgs.builder()
@@ -239,7 +240,7 @@ public class MediaFileServiceImpl implements MediaFileService {
             //如果数据库中有该文件，再去minio中查看是否存在
             GetObjectArgs getObjectArgs = GetObjectArgs.builder()
                     .bucket(bucket)
-                    .object(filePath)
+                    .object(filePath)//文件在minio中存储的路径
                     .build();
             //查询远程服务获取到一个流对象
             try {
@@ -264,7 +265,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         String chunkFileFolderPath = getChunkFileFolderPath(fileMd5);
         GetObjectArgs getObjectArgs = GetObjectArgs.builder()
                 .bucket(bucket_video)
-                .object(chunkFileFolderPath + chunkIndex)
+                .object(chunkFileFolderPath + chunkIndex)//文件在minio中存储的路径
                 .build();
         try {
             FilterInputStream inputStream = minioClient.getObject(getObjectArgs);
@@ -290,7 +291,7 @@ public class MediaFileServiceImpl implements MediaFileService {
             //指定分块文件的信息
             ComposeSource source = ComposeSource.builder()
                     .bucket(bucket_video)
-                    .object(chunkFileFolderPath + i)
+                    .object(chunkFileFolderPath + i)//文件在minio中存储的路径
                     .build();
             sources.add(source);
         }
@@ -303,7 +304,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         //合并后的composeObjectArgs
         ComposeObjectArgs composeObjectArgs = ComposeObjectArgs.builder()
                 .bucket(bucket_video)
-                .object(objectName)//合并后的文件名
+                .object(objectName)//文件在minio中存储的路径
                 .sources(sources)//指定源文件
                 .build();
         //合并分块
@@ -352,6 +353,7 @@ public class MediaFileServiceImpl implements MediaFileService {
     }
 
     //从minio下载文件
+    @Override
     public File downloadFileFromMinIO(String bucket, String objectName) {
         //临时文件
         File minioFile = null;
@@ -359,7 +361,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         try {
             InputStream stream = minioClient.getObject(GetObjectArgs.builder()
                     .bucket(bucket)
-                    .object(objectName)
+                    .object(objectName)//文件在minio中存储的路径
                     .build());
             //创建临时文件
             minioFile = File.createTempFile("minio", ".merge");
@@ -390,7 +392,7 @@ public class MediaFileServiceImpl implements MediaFileService {
 
             RemoveObjectsArgs removeObjectsArgs = RemoveObjectsArgs.builder()
                     .bucket(bucket_video)
-                    .objects(deleteObjects)
+                    .objects(deleteObjects)//文件在minio中存储的路径
                     .build();
             Iterable<Result<DeleteError>> results = minioClient.removeObjects(removeObjectsArgs);
             results.forEach(r -> {

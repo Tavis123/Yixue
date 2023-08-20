@@ -55,7 +55,7 @@ public class MinioTest {
 
         RemoveObjectArgs removeObjectArgs = RemoveObjectArgs.builder()
                 .bucket("video")//桶
-                .object("e/3/e3469292a4ba5ea779a6642927f9fba3/e3469292a4ba5ea779a6642927f9fba3.mp4")//对象名
+                .object("e/3/e3469292a4ba5ea779a6642927f9fba3/e3469292a4ba5ea779a6642927f9fba3.mp4")//文件在minio中存储的路径
                 .build();
         //执行删除文件
         minioClient.removeObject(removeObjectArgs);
