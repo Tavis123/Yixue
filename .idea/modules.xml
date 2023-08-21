@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/yixue-auth/yixue-auth.iml" filepath="$PROJECT_DIR$/yixue-auth/yixue-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-base/yixue-base.iml" filepath="$PROJECT_DIR$/yixue-base/yixue-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content.iml" />
       <module fileurl="file://$PROJECT_DIR$/yixue-content/yixue-content-controller/yixue-content-controller.iml" filepath="$PROJECT_DIR$/yixue-content/yixue-content-controller/yixue-content-controller.iml" />

@@ -8,7 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for yixue-media" enabled="true">
+      <profile name="Annotation profile for yixue-auth" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -16,16 +16,17 @@
           <entry name="D:/apache-maven-3.6.3/maven-repository/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
         </processorPath>
         <module name="yixue-media-model" />
-        <module name="yixue-gateway" />
-        <module name="yixue-system-model" />
         <module name="yixue-content-model" />
         <module name="yixue-media-service" />
         <module name="yixue-content-controller" />
+        <module name="yixue-base" />
+        <module name="yixue-system-controller" />
+        <module name="yixue-gateway" />
+        <module name="yixue-auth" />
+        <module name="yixue-system-model" />
         <module name="yixue-content-service" />
         <module name="yixue-generator" />
-        <module name="yixue-base" />
         <module name="yixue-system-service" />
-        <module name="yixue-system-controller" />
         <module name="yixue-media-controller" />
       </profile>
     </annotationProcessing>
@@ -40,6 +41,7 @@
       <module name="xuecheng-plus-media-model (2)" target="1.8" />
       <module name="xuecheng-plus-media-service (1)" target="1.8" />
       <module name="xuecheng-plus-media-service (2)" target="1.8" />
+      <module name="yixue-auth" target="1.8" />
       <module name="yixue-base" target="1.8" />
       <module name="yixue-content" target="1.8" />
       <module name="yixue-content-controller" target="1.8" />
