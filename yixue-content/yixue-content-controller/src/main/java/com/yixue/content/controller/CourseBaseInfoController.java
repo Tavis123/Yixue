@@ -9,6 +9,7 @@ import com.yixue.content.model.dto.EditCourseDto;
 import com.yixue.content.model.dto.QueryCourseParamsDto;
 import com.yixue.content.model.entity.CourseBase;
 import com.yixue.content.service.CourseBaseInfoService;
+import com.yixue.content.util.SecurityUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
@@ -52,8 +53,8 @@ public class CourseBaseInfoController {
     @GetMapping("/course/{courseId}")
     public CourseBaseInfoDto getCourseBaseById(@PathVariable Long courseId) {
         //取出当前用户身份
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        System.out.println(principal);
+        SecurityUtil.User user = SecurityUtil.getUser();
+//        System.out.println(user.getUsername());
         return courseBaseInfoService.getCourseBaseInfo(courseId);
     }
 

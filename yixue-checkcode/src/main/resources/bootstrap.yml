@@ -1,6 +1,6 @@
 spring:
   application:
-    name: auth-service
+    name: checkcode
   cloud:
     nacos:
       server-addr: 127.0.0.1:8848
@@ -19,12 +19,15 @@ spring:
           - data-id: logging-${spring.profiles.active}.yaml
             group: yixue-common
             refresh: true
-          - data-id: feign-${spring.profiles.active}.yaml
+          - data-id: redis-${spring.profiles.active}.yaml
             group: yixue-common
             refresh: true
 
   profiles:
     active: dev
+
 mybatis-plus:
+  #配置mapper.xml文件所在的路径
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.yixue.auth.entity
+  #配置映射类所在的包
+  type-aliases-package: com.yixue.checkcode.entity

@@ -24,6 +24,7 @@
         <module name="yixue-gateway" />
         <module name="yixue-auth" />
         <module name="yixue-system-model" />
+        <module name="yixue-checkcode" />
         <module name="yixue-content-service" />
         <module name="yixue-generator" />
         <module name="yixue-system-service" />
@@ -43,6 +44,7 @@
       <module name="xuecheng-plus-media-service (2)" target="1.8" />
       <module name="yixue-auth" target="1.8" />
       <module name="yixue-base" target="1.8" />
+      <module name="yixue-checkcode" target="1.8" />
       <module name="yixue-content" target="1.8" />
       <module name="yixue-content-controller" target="1.8" />
       <module name="yixue-content-model" target="1.8" />
