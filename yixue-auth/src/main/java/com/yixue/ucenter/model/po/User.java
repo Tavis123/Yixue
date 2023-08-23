@@ -21,12 +21,14 @@ public class User implements Serializable {
     private String salt;
 
     private String name;
+
     private String nickname;
+
     private String wxUnionid;
+
     private String companyId;
-    /**
-     * 头像
-     */
+
+    //用户头像
     private String userpic;
 
     private String utype;
@@ -41,14 +43,10 @@ public class User implements Serializable {
 
     private String qq;
 
-    /**
-     * 用户状态
-     */
+    //用户状态
     private String status;
 
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
-
-
 }
